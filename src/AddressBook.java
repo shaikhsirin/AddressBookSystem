@@ -14,7 +14,6 @@ public class AddressBook {
         System.out.println("Welcome to the Address Book Problem");
         AddressBook addressBookList=new AddressBook();
         boolean condition = true;
-
         while (condition == true) {
             System.out.println("Enter a options"+"\n"+"1.Do you want to continue in existing addressbook"+"\n"+"2.Create a new address book");
             int options = sc.nextInt();
@@ -186,3 +185,4 @@ public class AddressBook {
         }
     }
 }
+
