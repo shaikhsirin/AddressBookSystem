@@ -22,7 +22,7 @@ public class AddressBook {
                 case 1:
                     boolean condition1 = true;
                     while (condition1== true) {
-                        System.out.println("1.add" +"\n" +"2.display"+ "\n" + "3.edit"+"\n" +"4.delete"+"\n"+"5.RemoveDuplicates"+"\n"+"6.exit");
+                        System.out.println("1.add" +"\n" +"2.display"+ "\n" + "3.edit"+"\n" +"4.delete"+"\n"+"5.RemoveDuplicates"+"\n"+"6.SearchPerson in a city or State"+"\n"+"7.exit");
                         int option = sc.nextInt();
                         switch (option) {
                             case 1:
@@ -42,6 +42,12 @@ public class AddressBook {
                                 String personName=sc.next();
                                 addressBookList.removeDuplicates(personName);
                             case 6:
+                                System.out.println("Enter a city and state:-");
+                                String city=sc.next();
+                                String state=sc.next();
+                                addressBookList.searchPersonInCityOrState(city, state);
+                                break;
+                            case 7:
                                 condition1 = false;
                                 break;
                             default:
@@ -72,6 +78,11 @@ public class AddressBook {
                     System.out.println("Invalid Input");
             }
         }
+    }
+
+    public void searchPersonInCityOrState(String city, String state) {
+        List<Contact> seachPerson=adressBook.stream().filter(person->person.getCity().equals(city)).filter(person->person.getState().equals(state)).collect(Collectors.toList());
+        System.out.println("After searching person in a city or state is:"+seachPerson);
     }
 
     public void removeDuplicates(String personName) {
