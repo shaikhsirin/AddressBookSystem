@@ -126,4 +126,11 @@ public class AddressBook {
         }
         System.out.println(adressBook);
     }
+    public void display() {
+        for(int i=0; i<adressBook.size();i++) {
+            Contact person=adressBook.get(i);
+            System.out.println("FirstName"+":="+person.getFirstName()+"\n"+"lastname"+":= "+person.getLastName()+"\n"+"Address"+":= "+person.getAddress()
+                    +"\n"+"City"+":= "+person.getCity()+"\n"+"State"+":="+person.getState()+"\n"+"Zip"+":= "+person.getZip()+"\n"+"PhoneNumber"+":= "+person.getPhoneNumber()+"\n"+"Email"+":= "+person.getEmail());
+        }
+    }
 }
